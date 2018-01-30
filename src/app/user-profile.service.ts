@@ -13,6 +13,7 @@ export class UserProfileService {
   }
 
   getProfiles(){
+    console.log(this.profiles);
     return this.profiles
   }
 

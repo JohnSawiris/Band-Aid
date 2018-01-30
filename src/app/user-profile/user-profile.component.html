@@ -1,3 +1,5 @@
-<p>
-  user-profile works!
-</p>
+<div *ngFor="let profile of profiles">
+  <div class="card-body">
+    <h2>{{profile.name}}</h2>
+  </div>
+</div>

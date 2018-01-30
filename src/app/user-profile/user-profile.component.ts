@@ -7,16 +7,19 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
+  providers: [ UserProfileService ]
 })
 
 export class UserProfileComponent implements OnInit {
 
-  profiles: FirebaseListObservable<any[]>;
+  profiles: any[] = [];
 
   constructor(private router: Router, private userService: UserProfileService, ) { }
 
   ngOnInit() {
-    this.profiles = this.userService.getProfiles();
+    this.userService.getProfiles().subscribe(profilesLastEmitted => {
+      this.profiles = profilesLastEmitted;
+    });
   }
 }
