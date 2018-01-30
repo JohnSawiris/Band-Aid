@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss'],
   providers: [ UserProfileService ]
 })
+
 export class UserProfileComponent implements OnInit {
 
   profiles: any[] = [];
@@ -21,5 +22,4 @@ export class UserProfileComponent implements OnInit {
       this.profiles = profilesLastEmitted;
     });
   }
-
 }
