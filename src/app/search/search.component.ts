@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DiscogsService } from '../discogs.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -14,14 +15,12 @@ export class SearchComponent implements OnInit {
   searchList: any[] = null;
 
   constructor(
-    private discogsService: DiscogsService
+    private discogsService: DiscogsService,
+    private router: Router
   ) { }
 
-  getSearchList(query: string, type: string) {
-    this.discogsService.searchByQuery(query, type).subscribe(response => {
-      this.searchList = response.json().results;
-      console.log(this.searchList)
-    });
+  getSearchList(name: string) {
+    this.router.navigate(['artist-list', name]);
   }
 
   ngOnInit() {

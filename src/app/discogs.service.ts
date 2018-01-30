@@ -15,8 +15,8 @@ export class DiscogsService {
     private http: Http
   ) { }
 
-  searchByQuery(query: string, type: string) {
-    return this.http.get(`https://api.discogs.com/database/search?q=${query}&type=${type}&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
+  getArtistsByName(name: string) {
+    return this.http.get(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
   getReleasesByArtistId(artistId: string) {
