@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AuthenticationService } from '../authentication.service';
 
 @Component({
@@ -8,9 +7,10 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./header.component.scss'],
   providers: [AuthenticationService]
 })
+
 export class HeaderComponent implements OnInit {
   user;
-  private isLoggedIn:  boolean;
+  private isLoggedIn: boolean;
   private userName: string;
 
   constructor(public authService: AuthenticationService) {
