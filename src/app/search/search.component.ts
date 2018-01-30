@@ -8,6 +8,7 @@ import { DiscogsService } from '../discogs.service';
   styleUrls: ['./search.component.scss'],
   providers: [DiscogsService]
 })
+
 export class SearchComponent implements OnInit {
 
   searchList: any[] = null;
@@ -16,8 +17,8 @@ export class SearchComponent implements OnInit {
     private discogsService: DiscogsService
   ) { }
 
-  getSearchList(query: string) {
-    this.discogsService.searchByQuery(query).subscribe(response => {
+  getSearchList(query: string, type: string) {
+    this.discogsService.searchByQuery(query, type).subscribe(response => {
       this.searchList = response.json().results;
       console.log(this.searchList)
     });
@@ -25,5 +26,4 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

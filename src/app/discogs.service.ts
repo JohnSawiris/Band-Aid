@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { discogsAuth } from './app.module';
+import { masterDiscogsAuth } from '../api-keys'
+
+export const discogsAuth = {
+  key: masterDiscogsAuth.key,
+  secret: masterDiscogsAuth.secret
+}
 
 @Injectable()
 export class DiscogsService {
