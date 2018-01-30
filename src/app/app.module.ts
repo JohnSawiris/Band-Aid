@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { TourComponent } from './tour/tour.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TourComponent
   ],
   imports: [
     BrowserModule,

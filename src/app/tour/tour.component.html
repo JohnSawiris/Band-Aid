@@ -1,0 +1,6 @@
+<input #artistName>
+<button (click)="getArtistTour(artistName.value)">Search</button>
+
+<div *ngIf="tour">
+  <app-tour></app-tour>
+</div>

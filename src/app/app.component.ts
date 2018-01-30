@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DiscogsService } from './discogs.service';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
