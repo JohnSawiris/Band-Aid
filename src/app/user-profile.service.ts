@@ -9,7 +9,7 @@ export class UserProfileService {
   profiles: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.profiles = database.list('profiles');
+    this.profiles = database.list('userProfiles');
   }
 
   getProfiles(){
@@ -17,7 +17,7 @@ export class UserProfileService {
   }
 
   getProfilesById(profileId: string){
-    return this.database.object('profiles/' + profileId);
+    return this.database.object('userProfiles/' + profileId);
   }
 
 }

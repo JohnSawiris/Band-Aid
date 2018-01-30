@@ -1,13 +1,21 @@
-{ "userProfile": [{
-    "name": "Mikey Lovechilde",
-    "artistFollowList": ["Depeche Mode", "Chris and Cosey", "Autechre", "Vladislav Delay"],
-    "ownedAlbums": ["Violator", "Speak and Spell", "Heartbeat", "Songs Of Love & Lust", "Techno Primitiv", "Confield", "Exai", "Amber", "Multila", "Houne", "Visa"],
-    "albumWishlist": ["Black Celebration", "Music For The Masses", "Exotica", "Trance"]
-  },
-  {
-    "name": "Adam Smith",
-    "artistFollowList": ["Depeche Mode", "Chelsea Wolfe", "Alice In Chains"],
-    "ownedAlbums": ["Violator", "Construction and Time Again", "Ultra", "Ἀποκάλυψις", "The Grime And The Glow", "Dirt", "Alice In Chains"],
-    "albumWishlist": ["Speak and Spell", "Facelift"]
-  }]
+{ "userProfiles": [
+    {
+      "name": "Mikey Lovechilde",
+      "ownedAlbums": [{
+        "title": "Nirvana - Nevermind",
+        "masterId": "13814",
+        "thumb": "https://img.discogs.com/Yzw6YXtFQNw6ijV8Sj10eHSPIKA=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-367084-1263095553.jpeg.jpg"
+      },
+      {
+        "title": "Korn - Life Is Peachy",
+        "masterId": "32528",
+        "thumb": "https://img.discogs.com/f9_PlWiF9xctGxS8PVgK8XOuSio=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-495156-1438825739-1756.jpeg.jpg"
+      }],
+      "wishlistAlbums": [{
+        "title": "Staind ‎– Break The Cycle",
+        "masterId": "158040",
+        "thumb": "https://img.discogs.com/gBn3hgYHb0ym9r8WdBGurEMcux0=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-382028-1332970517.jpeg.jpg"
+      }]
+    }
+  ]
 }

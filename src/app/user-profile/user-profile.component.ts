@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
+
 export class UserProfileComponent implements OnInit {
 
   profiles: FirebaseListObservable<any[]>;
@@ -18,5 +19,4 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.profiles = this.userService.getProfiles();
   }
-
 }

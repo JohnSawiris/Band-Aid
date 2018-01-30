@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-results-list',
@@ -6,10 +7,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./results-list.component.scss']
 })
 export class ResultsListComponent implements OnInit {
+  currentRoute: string = this.currRoute.url;
 
   @Input() childSearchList;
 
-  constructor() { }
+  constructor(
+    private currRoute: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }
