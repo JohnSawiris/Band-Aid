@@ -4,7 +4,7 @@ import { masterFirebaseConfig } from '../api-keys';
 import { UserProfile } from './user.model';
 
 @Injectable()
-export class UserProfileService {
+export class UserProfileListService {
 
   profiles: FirebaseListObservable<any[]>;
 
@@ -20,5 +20,4 @@ export class UserProfileService {
   getProfilesById(profileId: string){
     return this.database.object('userProfiles/' + profileId);
   }
-
 }
