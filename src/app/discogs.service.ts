@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { discogsAuth } from '../api-keys';
+import { discogsAuth } from './app.module';
 
 @Injectable()
 export class DiscogsService {
@@ -10,9 +10,8 @@ export class DiscogsService {
     private http: Http
   ) { }
 
-  searchByQuery(query: string) {
-    console.log(`URL: https://api.discogs.com/database/search?q=${query}&key=${discogsAuth.key}&secret=${discogsAuth.secret}`)
-    return this.http.get(`https://api.discogs.com/database/search?q=${query}&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
+  searchByQuery(query: string, type: string) {
+    return this.http.get(`https://api.discogs.com/database/search?q=${query}&type=${type}&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
   getReleasesByArtistId(artistId: string) {
