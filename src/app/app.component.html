@@ -1,10 +1,1 @@
-<input #searchQuery>
-<button (click)='getSearchList(searchQuery.value)'>Search!</button>
-
-<div *ngIf="searchList">
-  <div *ngFor="let result of searchList">
-    <div>
-      <img src="{{result.thumb}}" alt="">
-    </div>
-  </div>
-</div>
+<app-search></app-search>
