@@ -10,7 +10,7 @@ export class TourService {
   ) { }
 
   getByArtistName(name: string) {
-    return this.http.get("https://rest.bandsintown.com/artists/${name}/events?app_id=BandAid")
+    return this.http.get(`https://rest.bandsintown.com/artists/${name}/events?app_id=BandAid`)
   }
 
 }

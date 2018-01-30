@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TourService } from './../tour.service';
+
 
 @Component({
   selector: 'app-tour',
@@ -8,14 +9,19 @@ import { TourService } from './../tour.service';
   providers: [TourService]
 })
 
-export class TourComponent {
+export class TourComponent implements OnInit {
   artists: any[]=null;
   constructor(private tourService: TourService) { }
+
+  ngOnInit() {
+
+  }
+
   getArtistTour(name: string) {
     this.tourService.getByArtistName(name).subscribe(response => {
       this.artists = response.json();
+      console.log(this.artists);
     })
   }
-
 
 }

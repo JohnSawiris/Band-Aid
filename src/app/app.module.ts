@@ -11,6 +11,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { SearchComponent } from './search/search.component';
 import { ResultsListComponent } from './results-list/results-list.component';
+import { TourResultsComponent } from './tour-results/tour-results.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     TourComponent,
     UserProfileComponent,
     SearchComponent,
-    ResultsListComponent
+    ResultsListComponent,
+    TourResultsComponent
   ],
   imports: [
     BrowserModule,
