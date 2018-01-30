@@ -19,12 +19,15 @@ export class HeaderComponent implements OnInit {
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
-        console.log(user.uid);
       }
     });
   }
 
   ngOnInit() {
+  }
+
+  signup(email: string, password: string) {
+    this.authService.signup(email, password);
   }
 
   login() {
