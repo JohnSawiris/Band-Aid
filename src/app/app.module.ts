@@ -9,12 +9,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { masterFirebaseConfig } from '../api-keys';
 import { AppComponent } from './app.component';
+import { TourComponent } from './tour/tour.component';
 import { routing } from './app.routing';
+
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { SearchComponent } from './search/search.component';
 import { ResultsListComponent } from './results-list/results-list.component';
+import { TourResultsComponent } from './tour-results/tour-results.component';
 
 import { HeaderComponent } from './header/header.component';
 
@@ -29,10 +32,13 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    TourComponent,
     UserProfileComponent,
     SearchComponent,
     ResultsListComponent,
+    TourResultsComponent,
     HeaderComponent
+
   ],
   imports: [
     BrowserModule,
