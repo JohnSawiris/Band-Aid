@@ -5,6 +5,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { masterDiscogsAuth, masterFirebaseConfig } from '../api-keys'
 import { AppComponent } from './app.component';
+
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 import { SearchComponent } from './search/search.component';
 import { ResultsListComponent } from './results-list/results-list.component';
 
@@ -12,6 +15,7 @@ export const discogsAuth = {
   key: masterDiscogsAuth.key,
   secret: masterDiscogsAuth.secret
 }
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,8 +28,10 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    UserProfileComponent,
     SearchComponent,
     ResultsListComponent
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+{ "userProfile": [{
+    "name": "Mikey Lovechilde",
+    "artistFollowList": ["Depeche Mode", "Chris and Cosey", "Autechre", "Vladislav Delay"],
+    "ownedAlbums": ["Violator", "Speak and Spell", "Heartbeat", "Songs Of Love & Lust", "Techno Primitiv", "Confield", "Exai", "Amber", "Multila", "Houne", "Visa"],
+    "albumWishlist": ["Black Celebration", "Music For The Masses", "Exotica", "Trance"]
+  },
+  {
+    "name": "Adam Smith",
+    "artistFollowList": ["Depeche Mode", "Chelsea Wolfe", "Alice In Chains"],
+    "ownedAlbums": ["Violator", "Construction and Time Again", "Ultra", "Ἀποκάλυψις", "The Grime And The Glow", "Dirt", "Alice In Chains"],
+    "albumWishlist": ["Speak and Spell", "Facelift"]
+  }]
+}
