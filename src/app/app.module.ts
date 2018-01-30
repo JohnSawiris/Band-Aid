@@ -21,6 +21,8 @@ import { TourResultsComponent } from './tour-results/tour-results.component';
 
 import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,7 +41,9 @@ export const firebaseConfig = {
     ResultsListComponent,
     TourResultsComponent,
     HeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SignUpComponent,
+    UserProfileComponent
 
   ],
   imports: [

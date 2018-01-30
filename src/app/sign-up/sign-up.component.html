@@ -1,0 +1,8 @@
+<div class="signup-form">
+  <form>
+    <h2>Sign up</h2>
+    Email: <input type="text" #email>
+    Password: <input type="password" #password>
+  </form>
+  <button (click)="signup(email.value, password.value)">Sign up</button>
+</div>
