@@ -17,8 +17,8 @@ export class AppComponent {
     private discogsService: DiscogsService
   ) { }
 
-  getSearchList(query: string) {
-    this.discogsService.searchByQuery(query).subscribe(response => {
+  getSearchList(query: string, type: string) {
+    this.discogsService.searchByQuery(query, type).subscribe(response => {
       this.searchList = response.json().results;
       console.log(this.searchList);
     });

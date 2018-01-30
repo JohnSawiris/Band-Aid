@@ -1,10 +1,16 @@
 <input #searchQuery>
-<button (click)='getSearchList(searchQuery.value)'>Search!</button>
+<select #searchBy>
+  <option value="">Any</option>
+  <option value="artist">Artist Name</option>
+  <option value="master">Album Title</option>
+</select>
+<button (click)='getSearchList(searchQuery.value, searchBy.value)'>Search!</button>
 
 <div *ngIf="searchList">
   <div *ngFor="let result of searchList">
     <div>
       <img src="{{result.thumb}}" alt="">
+      <span>{{result.title}}</span>
     </div>
   </div>
 </div>
