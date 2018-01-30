@@ -7,6 +7,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { masterFirebaseConfig } from '../api-keys';
 import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -36,7 +37,9 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    routing,
     AngularFireAuthModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
