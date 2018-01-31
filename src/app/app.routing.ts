@@ -54,7 +54,6 @@ const appRoutes: Routes = [
     path: 'user-profile/:id',
     component: UserProfileComponent
   }
-
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
