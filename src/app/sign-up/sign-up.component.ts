@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../authentication.service';
 
+import { AuthenticationService } from '../authentication.service';
 import { UserProfile } from '../user.model';
 import { UserProfileListService } from '../user-profile-list.service';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
   providers: [AuthenticationService, UserProfileListService]
 })
+
 export class SignUpComponent implements OnInit {
   displayError;
   constructor(

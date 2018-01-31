@@ -6,6 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   templateUrl: './results-list.component.html',
   styleUrls: ['./results-list.component.scss']
 })
+
 export class ResultsListComponent implements OnInit {
 
   @Input() childSearchList;
@@ -27,5 +28,4 @@ export class ResultsListComponent implements OnInit {
   goToArtistsAlbums(result) {
     this.router.navigate(['artist-list', result.id])
   }
-
 }

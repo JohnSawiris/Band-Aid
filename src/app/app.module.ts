@@ -1,34 +1,34 @@
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NgModule } from '@angular/core';
 
 import { masterFirebaseConfig } from '../api-keys';
-import { AppComponent } from './app.component';
-import { TourComponent } from './tour/tour.component';
 import { routing } from './app.routing';
-
-
-import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
-
-import { SearchComponent } from './search/search.component';
-import { ResultsListComponent } from './results-list/results-list.component';
-import { TourResultsComponent } from './tour-results/tour-results.component';
-
-import { HeaderComponent } from './header/header.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-
 import { UserProfileListService } from './user-profile-list.service';
 
+import { AppComponent } from './app.component';
+import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { ResultsListComponent } from './results-list/results-list.component';
+import { SearchComponent } from './search/search.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { TourComponent } from './tour/tour.component';
+import { TourResultsComponent } from './tour-results/tour-results.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { UserProfileListService } from './user-profile-list.service';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+
 
 
 export const firebaseConfig = {
@@ -42,29 +42,31 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    TourComponent,
-    UserProfileListComponent,
-    SearchComponent,
-    ResultsListComponent,
-    TourResultsComponent,
+    AlbumDetailsComponent,
+    ArtistAlbumListComponent,
+    ArtistListComponent,
     HeaderComponent,
-    WelcomeComponent,
+    LoginComponent,
+    ResultsListComponent,
+    SearchComponent,
     SignUpComponent,
+    TourComponent,
+    TourResultsComponent,
     UserProfileComponent,
+    UserProfileListComponent,
+    WelcomeComponent,
     ArtistListComponent,
     ArtistAlbumListComponent,
     EditProfileComponent
-
   ],
   imports: [
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
-
+    routing
   ],
   providers: [UserProfileListService],
   bootstrap: [AppComponent]

@@ -3,6 +3,15 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      &:nth-child(1n+2) {
+        margin-left: 20px;
+      }
+    }
+  }
 }
 
 .signup div {

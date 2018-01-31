@@ -1,5 +1,6 @@
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+
 import { DiscogsService } from '../discogs.service';
 
 @Component({
@@ -11,20 +12,29 @@ import { DiscogsService } from '../discogs.service';
 
 export class ArtistAlbumListComponent implements OnInit {
   artistId: string;
+  artistDetails;
   albumsToDisplay;
 
   constructor(
     private route: ActivatedRoute,
-    private discogsService: DiscogsService
+    private discogsService: DiscogsService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.route.params.forEach(urlParameters => {
       this.artistId = urlParameters['id'];
     });
-      this.discogsService.getReleasesByArtistId(this.artistId).subscribe(artistAlbums => {
-        this.albumsToDisplay = artistAlbums.json().releases;
+    this.discogsService.getArtistDetailsByArtistId(this.artistId).subscribe(artist => {
+      this.artistDetails = artist.json();
+      this.discogsService.getReleasesByArtistId(this.artistDetails.name).subscribe(artistAlbums => {
+        this.albumsToDisplay = artistAlbums.json().results;
         console.log(this.albumsToDisplay);
-     });
+      });
+    });
+  }
+
+  goToAlbumDetails(album) {
+    this.router.navigate(['album-details', album.id]);
   }
 }

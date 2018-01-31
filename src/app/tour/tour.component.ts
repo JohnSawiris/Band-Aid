@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TourService } from './../tour.service';
 
+import { TourService } from './../tour.service';
 
 @Component({
   selector: 'app-tour',
