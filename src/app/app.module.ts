@@ -11,6 +11,7 @@ import { routing } from './app.routing';
 import { UserProfileListService } from './user-profile-list.service';
 
 import { AppComponent } from './app.component';
+import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +37,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    AlbumDetailsComponent,
     ArtistAlbumListComponent,
     ArtistListComponent,
     HeaderComponent,

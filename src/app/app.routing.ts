@@ -1,6 +1,7 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component'
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +15,10 @@ const appRoutes: Routes = [
   {
     path: '',
     component: WelcomeComponent
+  },
+  {
+    path: 'album-details/:id',
+    component: AlbumDetailsComponent
   },
   {
     path: 'artist-album-list/:id',
