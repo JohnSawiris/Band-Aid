@@ -1,3 +1,5 @@
+import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component'
+import { ArtistListComponent } from './artist-list/artist-list.component';
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -33,21 +35,30 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'profiles',
-    component: UserProfileListComponent
+    path: 'artist-album-list/:id',
+    component: ArtistAlbumListComponent
+  },
+  {
+    path: 'artist-list/:name',
+    component: ArtistListComponent
   },
   {
     path: 'search',
     component: SearchComponent
   },
   {
+    path: 'profiles',
+    component: UserProfileListComponent
+  },
+  {
     path: 'signup',
     component: SignUpComponent
   },
   {
-    path: 'user-profile',
+    path: 'user-profile/:id',
     component: UserProfileComponent
-  },
+  }
+
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

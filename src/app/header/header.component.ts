@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication.service';
 
@@ -14,13 +15,18 @@ export class HeaderComponent implements OnInit {
   private isLoggedIn: boolean;
   private userName: string;
 
-  constructor(public authService: AuthenticationService) {
+  constructor(
+    public authService: AuthenticationService,
+    private router: Router
+  ) {
     this.authService.user.subscribe(user => {
       if(user === null) {
         this.isLoggedIn = false;
+        this.router.navigate(['']);
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
+        this.router.navigate(['user-profile']);
       }
     });
   }

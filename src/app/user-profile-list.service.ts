@@ -14,7 +14,6 @@ export class UserProfileListService {
   }
 
   getProfiles(){
-    console.log(this.profiles);
     return this.profiles
   }
 
