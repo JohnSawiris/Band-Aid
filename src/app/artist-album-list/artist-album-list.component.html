@@ -2,13 +2,17 @@
   <h2>{{artistDetails.name}}</h2>
   <p>{{artistDetails.profile}}</p>
 </div>
-
-<div class="album-list">
-  <div *ngFor="let album of albumsToDisplay">
-    <div (click)="goToAlbumDetails(album)">
-      <h4>{{album.title}}</h4>
-      <h4>{{album.id}}</h4>
-      <img src="{{album.thumb}}" alt="">
+<div class="tour-albums">
+  <div class="artist-tour">
+    <app-tour [childArtistName]="artistDetails.name"></app-tour>
+  </div>
+  <div class="album-list">
+    <div *ngFor="let album of albumsToDisplay">
+      <div (click)="goToAlbumDetails(album)">
+        <h4>{{album.title}}</h4>
+        <h4>{{album.id}}</h4>
+        <img src="{{album.thumb}}" alt="">
+      </div>
     </div>
 
   </div>
