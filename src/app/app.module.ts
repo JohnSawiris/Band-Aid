@@ -17,7 +17,6 @@ import { UserProfileListComponent } from './user-profile-list/user-profile-list.
 
 import { SearchComponent } from './search/search.component';
 import { ResultsListComponent } from './results-list/results-list.component';
-import { TourResultsComponent } from './tour-results/tour-results.component';
 
 import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -45,7 +44,6 @@ export const firebaseConfig = {
     UserProfileListComponent,
     SearchComponent,
     ResultsListComponent,
-    TourResultsComponent,
     HeaderComponent,
     WelcomeComponent,
     SignUpComponent,

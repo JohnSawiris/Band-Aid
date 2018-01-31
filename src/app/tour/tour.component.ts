@@ -10,18 +10,17 @@ import { TourService } from './../tour.service';
 })
 
 export class TourComponent implements OnInit {
-  artists: any[]=null;
+  tours: any[]=null;
   constructor(private tourService: TourService) { }
 
   ngOnInit() {
+      this.tourService.getByArtistName("sza").subscribe(response => {
+        this.tours = response.json();
+        console.log(this.tours);
+      })
+
 
   }
 
-  getArtistTour(name: string) {
-    this.tourService.getByArtistName(name).subscribe(response => {
-      this.artists = response.json();
-      console.log(this.artists);
-    })
-  }
 
 }
