@@ -2,28 +2,31 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { UserProfileListService } from './user-profile-list.service';
+import { UserProfile } from './user.model';
 
 @Injectable()
 export class AuthenticationService {
   user: Observable<firebase.User>;
 
-  // currentUser = firebase.auth().currentUser;
-
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    public userProfileListService: UserProfileListService
+  ) {
     this.user = afAuth.authState;
   }
-  // used farbase create user with email method
-  // set the error parameter to FirebaseError datatype
-  signup(email: string, password: string) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error: firebase.FirebaseError){
-      let errorCode: any = error.code;
-      let errorMessage: any = error.message;
-      if(errorCode === 'auth/weak-password') {
-        console.log('Password is weak')
-      } else {
-        console.log(errorMessage);
-      }
-    });
+
+  createWithEmail(email: string, password: string, name: string) {
+    this.afAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(value => {
+        const newUser = new UserProfile(name, value.uid, value.email);
+        this.userProfileListService.addNewProfile(newUser);
+      })
+      .catch((err: firebase.FirebaseError) => {
+        alert(err.message);
+      })
   }
 
   login() {
