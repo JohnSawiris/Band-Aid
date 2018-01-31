@@ -27,9 +27,12 @@ export class UserProfileComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.profileId = urlParameters['id'];
     });
-    this.userProfileService.getProfilesById(this.profileId).subscribe(data => {
-      console.log(data);
-      this.profileToDisplay = data;
+    this.userProfileService.getProfiles().subscribe(profiles => {
+      for(let profile of profiles) {
+        if(profile.id === this.profileId) {
+          this.profileToDisplay = profile;
+        }
+      }
     });
   }
 }
