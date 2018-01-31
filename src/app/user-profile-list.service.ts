@@ -20,4 +20,8 @@ export class UserProfileListService {
   getProfilesById(profileId: string){
     return this.database.object('userProfiles/' + profileId);
   }
+
+  addNewProfile(newUser: UserProfile) {
+    this.profiles.push(newUser);
+  }
 }
