@@ -21,11 +21,9 @@ export class HeaderComponent implements OnInit {
     this.authService.user.subscribe(user => {
       if(user === null) {
         this.isLoggedIn = false;
-        this.router.navigate(['']);
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
-        this.router.navigate(['user-profile']);
       }
     });
   }
