@@ -11,26 +11,22 @@ import { AuthenticationService } from '../authentication.service';
 })
 
 export class HeaderComponent implements OnInit {
-  user;
-  private isLoggedIn: boolean;
-  private userName: string;
+  private currentUser;
+  private isLoggedIn;
 
   constructor(
     public authService: AuthenticationService,
     private router: Router
-  ) {
-    this.authService.user.subscribe(user => {
-      if(user === null) {
-        this.isLoggedIn = false;
-      } else {
-        this.isLoggedIn = true;
-        this.userName = user.displayName;
-        this.router.navigate(['user-profile/', user.uid]);
-      }
-    });
-  }
+  ) { }
 
   ngOnInit() {
+    this.authService.user.subscribe(user => {
+      if (!user) {
+        this.currentUser = null;
+      } else if (user) {
+        this.currentUser = user;
+      }
+    });
   }
 
   login() {
@@ -42,4 +38,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  goToUserProfile(userId) {
+    console.log(userId);
+    this.router.navigate(['user-profile', userId]);
+  }
 }

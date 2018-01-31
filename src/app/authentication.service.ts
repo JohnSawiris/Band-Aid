@@ -19,15 +19,15 @@ export class AuthenticationService {
 
   createWithEmail(email: string, password: string, name: string) {
     this.afAuth
-      .auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(value => {
-        const newUser = new UserProfile(name, value.uid, value.email);
-        this.userProfileListService.addNewProfile(newUser);
-      })
-      .catch((err: firebase.FirebaseError) => {
-        alert(err.message);
-      })
+    .auth
+    .createUserWithEmailAndPassword(email, password)
+    .then(value => {
+      const newUser = new UserProfile(name, value.uid, value.email);
+      this.userProfileListService.addNewProfile(newUser);
+    })
+    .catch((err: firebase.FirebaseError) => {
+      alert(err.message);
+    })
   }
 
   login() {
@@ -36,6 +36,10 @@ export class AuthenticationService {
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  isLoggedIn() {
+    return (this.user ? true : false);
   }
 
 }
