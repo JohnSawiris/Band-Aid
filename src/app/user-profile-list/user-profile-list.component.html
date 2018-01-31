@@ -1,4 +1,4 @@
-<div *ngFor="let profile of profiles">
+<div *ngFor="let profile of profiles" (click)='getUserProfile(profile)'>
   <div class="card-body">
     <h2>{{profile.name}}</h2>
   </div>

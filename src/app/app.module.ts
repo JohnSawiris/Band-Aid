@@ -28,6 +28,7 @@ import { UserProfileListService } from './user-profile-list.service';
 
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 export const firebaseConfig = {
@@ -51,7 +52,8 @@ export const firebaseConfig = {
     SignUpComponent,
     UserProfileComponent,
     ArtistListComponent,
-    ArtistAlbumListComponent
+    ArtistAlbumListComponent,
+    EditProfileComponent
 
   ],
   imports: [
