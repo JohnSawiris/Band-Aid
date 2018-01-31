@@ -24,4 +24,9 @@ export class UserProfileListService {
   addNewProfile(newUser: UserProfile) {
     this.profiles.push(newUser);
   }
+
+  updateProfile(profile){
+    var profileEntry = this.getProfilesById(profile.$key);
+    profileEntry.update({name: profile.name});
+  }
 }
