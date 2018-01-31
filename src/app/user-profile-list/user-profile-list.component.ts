@@ -25,6 +25,6 @@ export class UserProfileListComponent implements OnInit {
   }
 
   getUserProfile(clickedUser){
-    this.router.navigate(['user-profile', clickedUser.$key]);
+    this.router.navigate(['user-profile', clickedUser.id]);
   }
 }

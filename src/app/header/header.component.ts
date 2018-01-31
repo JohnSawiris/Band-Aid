@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
+        this.router.navigate(['user-profile/', user.uid]);
       }
     });
   }
