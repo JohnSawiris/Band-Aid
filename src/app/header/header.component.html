@@ -6,15 +6,8 @@
     <li><a routerLink="">Home</a></li>
     <li><a routerLink="profiles">Profiles</a></li>
     <li><a routerLink="search">Search</a></li>
+    <li *ngIf="!currentUser"><a routerLink="login">Login</a> or <a routerLink="signup">Sign up!</a></li>
+    <li *ngIf="currentUser"><a (click)="goToUserProfile(currentUser.uid)">{{currentUser.displayName}}</a></li>
+    <li *ngIf="currentUser"><a (click)="logout()">Logout</a></li>
   </ul>
-  <div class="signup">
-    <div *ngIf="!isLoggedIn">
-      <a routerLink="signup"><h3>Sign up!</h3></a>
-      <span>If you already have an account, <span (click)="login()">login with Google</span></span>
-    </div>
-    <div *ngIf="isLoggedIn">
-      <h3>Welcome, {{userName}}</h3>
-      <a (click)="logout()">logout</a>
-    </div>
-  </div>
 </div>
