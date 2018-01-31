@@ -3,6 +3,16 @@
     <h2>Sign up</h2>
     Email: <input type="text" #email>
     Password: <input type="password" #password>
+    Name: <input type="text" #name>
   </form>
-  <button (click)="signup(email.value, password.value)">Sign up</button>
+  <button (click)="signup(
+    email.value,
+    password.value,
+    name.value);
+    email.value = '';
+    password.value = '';
+    name.value = '';">Sign up</button>
+</div>
+<div>
+  {{displayError}}
 </div>

@@ -1,9 +1,4 @@
 <input #searchQuery>
-<select #searchType>
-  <option value="">All</option>
-  <option value="artist">Artist Name</option>
-  <option value="master">Album Title</option>
-</select>
-<button (click)='getSearchList(searchQuery.value, searchType.value)'>Search!</button>
+<button (click)='getSearchList(searchQuery.value)'>Search!</button>
 
 <app-results-list [childSearchList]="searchList"></app-results-list>

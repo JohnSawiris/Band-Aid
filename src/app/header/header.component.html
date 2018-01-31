@@ -10,7 +10,7 @@
   <div class="signup">
     <div *ngIf="!isLoggedIn">
       <a routerLink="signup"><h3>Sign up!</h3></a>
-      <span>If you already have an account, <a routerLink="login">login!</a></span>
+      <span>If you already have an account, <span (click)="login()">login with Google</span></span>
     </div>
     <div *ngIf="isLoggedIn">
       <h3>Welcome, {{userName}}</h3>
