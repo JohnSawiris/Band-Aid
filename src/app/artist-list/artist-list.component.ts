@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 import { DiscogsService } from '../discogs.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { DiscogsService } from '../discogs.service';
   providers: [DiscogsService]
 })
 export class ArtistListComponent implements OnInit {
-  artistId: string;
+  artistName: string;
   artistsToDisplay;
 
   constructor(
@@ -20,10 +21,10 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach(urlParameters => {
-      this.artistId = urlParameters['name'];
+      this.artistName = urlParameters['name'];
     });
 
-    this.discogsService.getArtistsByName(this.artistId).subscribe(artists => {
+    this.discogsService.getArtistsByName(this.artistName).subscribe(artists => {
       this.artistsToDisplay = artists.json().results;
       console.log(this.artistsToDisplay);
    });

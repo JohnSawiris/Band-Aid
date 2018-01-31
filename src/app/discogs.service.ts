@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+
 import { masterDiscogsAuth } from '../api-keys'
 
 export const discogsAuth = {
@@ -16,11 +17,16 @@ export class DiscogsService {
   ) { }
 
   getArtistsByName(name: string) {
+    console.log(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
     return this.http.get(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
-  getReleasesByArtistId(artistId: string) {
-    return this.http.get(`https://api.discogs.com/artists/${artistId}/releases?key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
+  getArtistDetailsByArtistId(artistId: string) {
+    return this.http.get(`https://api.discogs.com/artists/${artistId}?key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
+  }
+
+  getReleasesByArtistId(artistName: string) {
+    return this.http.get(`https://api.discogs.com/database/search?artist=${artistName}&type=master&strict=true&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
   getAlbumByMasterId(albumId: string) {

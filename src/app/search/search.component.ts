@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { DiscogsService } from '../discogs.service';
 import { Router } from '@angular/router';
+
+import { DiscogsService } from '../discogs.service';
 
 @Component({
   selector: 'app-search',

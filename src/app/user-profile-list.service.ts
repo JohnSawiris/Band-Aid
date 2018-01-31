@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Injectable } from '@angular/core';
+
 import { masterFirebaseConfig } from '../api-keys';
 import { UserProfile } from './user.model';
 
@@ -13,7 +14,6 @@ export class UserProfileListService {
   }
 
   getProfiles(){
-    console.log(this.profiles);
     return this.profiles
   }
 
