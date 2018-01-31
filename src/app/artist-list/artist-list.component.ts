@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 import { DiscogsService } from '../discogs.service';
 
 @Component({

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfile } from '../user.model';
-import { UserProfileListService } from '../user-profile-list.service'
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+
+import { UserProfile } from '../user.model';
+import { UserProfileListService } from '../user-profile-list.service'
 
 @Component({
   selector: 'app-user-profile',
