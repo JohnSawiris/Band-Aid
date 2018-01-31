@@ -22,4 +22,8 @@ export class UserProfileListComponent implements OnInit {
       this.profiles = profilesLastEmitted;
     });
   }
+
+  getUserProfile(clickedUser){
+    this.router.navigate(['user-profile', clickedUser.$key]);
+  }
 }
