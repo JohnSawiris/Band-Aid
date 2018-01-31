@@ -4,6 +4,7 @@ import { UserProfileListComponent } from './user-profile-list/user-profile-list.
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {
@@ -13,6 +14,10 @@ const appRoutes: Routes = [
   {
     path: 'signup',
     component: SignUpComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'profiles',

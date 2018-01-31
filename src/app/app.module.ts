@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +44,8 @@ export const firebaseConfig = {
     HeaderComponent,
     WelcomeComponent,
     SignUpComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    LoginComponent
 
   ],
   imports: [
