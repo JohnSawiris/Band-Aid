@@ -1,6 +1,11 @@
 <div>
   <h1>{{profileToDisplay.name}}</h1>
 </div>
-<div>
-    <app-edit-profile [selectedProfile]="profileToDisplay" (doneSender)="clearEdit()"></app-edit-profile>
+<div *ngIf="toggle">
+  <div class="edit-form">
+    <div class="form-group">
+      <input placeholder="name" [(ngModel)]="profileToDisplay.name">
+    </div>
+    <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay);">Update</button>
+  </div>
 </div>
