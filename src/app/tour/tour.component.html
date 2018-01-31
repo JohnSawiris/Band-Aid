@@ -1,8 +1,13 @@
 <h1>Tour</h1>
-<input #artistName>
-<button (click)="getArtistTour(artistName.value)">Search</button>
-
-<div *ngIf="tours">
-  <div *ngFor="let tour of tours"></div>
-
+<div class="artist-tour">
+  <div *ngIf="tours">
+    <div *ngFor="let tour of tours">
+      <ul>
+        <li>{{tour.datetime | date: "LLLL d, yyyy 'at' h:mma" }}</li>
+        <li>{{tour.venue.name}}</li>
+        <li>{{tour.venue.city}}</li>
+        <li>{{tour.venue.region}}</li>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,7 @@ import { masterFirebaseConfig } from '../api-keys';
 import { routing } from './app.routing';
 import { UserProfileListService } from './user-profile-list.service';
 
+
 import { AppComponent } from './app.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
@@ -24,9 +25,6 @@ import { TourResultsComponent } from './tour-results/tour-results.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { UserProfileListService } from './user-profile-list.service';
-import { ArtistListComponent } from './artist-list/artist-list.component';
-import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 

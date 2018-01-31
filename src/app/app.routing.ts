@@ -10,8 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TourComponent } from './tour/tour.component';
 import { UserProfileListComponent } from './user-profile-list/user-profile-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+
 
 const appRoutes: Routes = [
   {
@@ -35,12 +37,8 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'artist-album-list/:id',
-    component: ArtistAlbumListComponent
-  },
-  {
-    path: 'artist-list/:name',
-    component: ArtistListComponent
+    path: 'tour',
+    component: TourComponent
   },
   {
     path: 'search',
