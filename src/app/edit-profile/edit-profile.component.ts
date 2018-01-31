@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserProfileListService } from '../user-profile-list.service';
 import { UserProfile } from '../user.model';
@@ -12,8 +12,15 @@ import { UserProfile } from '../user.model';
 
 export class EditProfileComponent implements OnInit {
 
+  @Input() selectedProfile;
+  @Output() doneSender = new EventEmitter();
 
-  constructor() { }
+  constructor(private profileService: UserProfileListService, private router: Router) { }
+
+  updateSubmit(profile){
+    this.profileService.updateProfile(profile);
+    this.doneSender.emit();
+  }
 
   ngOnInit() {
   }
