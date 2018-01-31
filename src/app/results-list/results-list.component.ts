@@ -7,12 +7,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./results-list.component.scss']
 })
 export class ResultsListComponent implements OnInit {
-  currentRoute: string = this.currRoute.url;
 
   @Input() childSearchList;
 
   constructor(
-    private currRoute: Router,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
@@ -23,6 +22,10 @@ export class ResultsListComponent implements OnInit {
     console.log(id);
     console.log(title);
     console.log(img);
+  }
+
+  goToArtistsAlbums(result) {
+    this.router.navigate(['artist-list', result.id])
   }
 
 }

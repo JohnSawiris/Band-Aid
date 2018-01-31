@@ -1,13 +1,8 @@
 <div *ngIf="childSearchList">
   <div *ngFor="let result of childSearchList">
-    <div>
+    <div (click)='goToArtistsAlbums(result)'>
       <img src="{{result.thumb}}" alt="">
       <p>{{result.title}}</p>
-      <button type="button" name="button" (click)="addToWishlist(
-      result.id,
-      result.title,
-      result.thumb
-      )">Add to Wishlist</button>
     </div>
   </div>
 </div>

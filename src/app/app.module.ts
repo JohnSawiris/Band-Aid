@@ -23,7 +23,12 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+
 import { UserProfileListService } from './user-profile-list.service';
+
+import { ArtistListComponent } from './artist-list/artist-list.component';
+import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -44,7 +49,9 @@ export const firebaseConfig = {
     HeaderComponent,
     WelcomeComponent,
     SignUpComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ArtistListComponent,
+    ArtistAlbumListComponent
 
   ],
   imports: [

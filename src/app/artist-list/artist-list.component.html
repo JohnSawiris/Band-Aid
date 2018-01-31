@@ -1,0 +1,6 @@
+<div *ngFor="let artist of artistsToDisplay">
+  <div (click)="goToArtistsAlbums(artist)">
+    <h3>{{artist.title}}</h3>
+    <img src="{{artist.thumb}}" alt="">
+  </div>
+</div>
