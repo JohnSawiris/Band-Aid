@@ -1,10 +1,9 @@
-<h2>Login</h2>
 
 <form (keyup.enter)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)" class="login-wrapper">
+  <h2>Login</h2>
   <label for="user-email">Email</label>
   <input id="user-email" type="email" #userEmailInput>
   Password:
   <input id="user-password" type="password" #userPasswordInput>
   <button type="button" (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login!</button>
 </form>
-

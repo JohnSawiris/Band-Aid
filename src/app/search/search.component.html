@@ -1,5 +1,7 @@
 <div (keyup.enter)='getSearchList(searchQuery.value)' class="search-field">
   <h2>Search</h2>
-  <input #searchQuery>
-  <button (click)='getSearchList(searchQuery.value)'>Search</button>
+  <div class="search-input">
+    <input #searchQuery>
+    <button (click)='getSearchList(searchQuery.value)'>Search</button>
+  </div>
 </div>
