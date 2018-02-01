@@ -25,5 +25,6 @@ export class SignUpComponent implements OnInit {
 
   signup(email: string, password: string, name: string) {
     this.authService.createWithEmail(email, password, name);
+    this.router.navigate(['']);
   }
 }

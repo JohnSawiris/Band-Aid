@@ -7,7 +7,7 @@
     <div class="album-list">
       <div class="col-md-4 mb-4" *ngFor="let album of albumsToDisplay">
         <div (click)="goToAlbumDetails(album)">
-          <div class="car-img-top image-wrapper">
+          <div class="card-img-top image-wrapper">
             <img src="{{album.thumb}}" alt="This is an album cover image for {{album.title}}">
           </div>
           <span class="card-text">{{album.title}}</span>
