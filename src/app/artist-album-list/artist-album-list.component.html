@@ -4,11 +4,13 @@
       <h2>{{artistDetails.name}}</h2>
       <p>{{artistDetails.profile}}</p>
     </div>
-    <div class="album-list row">
+    <div class="album-list">
       <div class="col-md-4 mb-4" *ngFor="let album of albumsToDisplay">
-        <div class="card" (click)="goToAlbumDetails(album)">
-          <img class="card-img-top" src="{{album.thumb}}" alt="">
-          <p class="card-text">{{album.title}}</p>
+        <div (click)="goToAlbumDetails(album)">
+          <div class="car-img-top image-wrapper">
+            <img src="{{album.thumb}}" alt="This is an album cover image for {{album.title}}">
+          </div>
+          <span class="card-text">{{album.title}}</span>
         </div>
       </div>
     </div>
