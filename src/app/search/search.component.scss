@@ -1,0 +1,15 @@
+.search-field {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+
+  input {
+    width: 300px;
+    border: 1px solid black;
+  }
+  button {
+    margin-left: 10px;
+    background: none;
+    border: 1px solid black;
+  }
+}
