@@ -1,42 +1,54 @@
 <div *ngIf="profileToDisplay">
-  <h1>{{profileToDisplay.name}}</h1>
-  <div *ngIf="toggle">
+  <h1 class="profile-name">{{profileToDisplay.name}}</h1>
+  <div class="edit-div" *ngIf="toggle">
     <div class="edit-form">
-      <div (keyup.enter)='updateSubmit(profileToDisplay)' class="form-group">
-        <input placeholder="name" [(ngModel)]="profileToDisplay.name">
+      <div (keyup.enter)='updateSubmit(profileToDisplay)' class="form-group edit-input-field">
+        <input class="form-control" placeholder="name" [(ngModel)]="profileToDisplay.name">
       </div>
-      <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay)">Edit Profile Name</button>
+      <button class="btn btn-primary btn-sm"  (click)="updateSubmit(profileToDisplay)">Edit Profile Name</button>
     </div>
   </div>
   <div class="container">
-    <h1>Collection</h1>
-    <p>- Remove from Collection</p>
-    <div class="row">
-      <div class="col-md-2" *ngFor="let albumInCollection of albumsInCollection">
-        <div class="card">
-          <img class="card-img-top" src="{{albumInCollection.image}}" (click)="goToAlbumDetails(albumInCollection)">
+    <div class="collection">
+      <h2>Collection:</h2>
+      <p *ngIf="toggle">- Remove from Collection</p>
+      <div class="row">
+        <div class="col-md-2" *ngFor="let albumInCollection of albumsInCollection">
+          <div class="card">
+            <img class="card-img-top" src="{{albumInCollection.image}}" (click)="goToAlbumDetails(albumInCollection)">
 
-          <div class="card-body" *ngIf="toggle">
-            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">-</button>
+            <div class="card-body" *ngIf="toggle">
+              <button class="btn btn-outline-danger btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">-</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <h1>Wishlist</h1>
-    <p>+ Add to Collection</p>
-    <p>- Remove from Wishlist</p>
-    <div class="row">
-      <div class="col-md-2" *ngFor="let albumInWishlist of albumsInWishlist">
-        <div class="card">
-          <img class="card-img-top" src="{{albumInWishlist.image}}" (click)="goToAlbumDetails(albumInWishlist)">
-          <div class="card-body" *ngIf="toggle">
-            <button class="btn btn-outline-primary" (click)="moveToCollection(
-            profileToDisplay.$key,
-            albumInWishlist)">+</button>
-            <button class="btn btn-outline-secondary" (click)="deleteAlbumInWishlist(
-            profileToDisplay.$key,
-            albumInWishlist.$key
-            )">-</button>
+    <div class="wishlist">
+      <h2>Wishlist:</h2>
+      <div *ngIf="toggle">
+        <p>+ Add to Collection</p>
+        <p>- Remove from Wishlist</p>
+      </div>
+      <div class="row">
+        <div class="col-md-2" *ngFor="let albumInWishlist of albumsInWishlist">
+          <div class="card">
+            <img class="card-img-top" src="{{albumInWishlist.image}}" (click)="goToAlbumDetails(albumInWishlist)">
+            <div class="card-body" *ngIf="toggle">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn-outline-primary" (click)="moveToCollection(
+                  profileToDisplay.$key,
+                  albumInWishlist)">+</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-outline-danger" (click)="deleteAlbumInWishlist(
+                  profileToDisplay.$key,
+                  albumInWishlist.$key
+                  )">-</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
