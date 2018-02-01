@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { UserProfileListService } from '../user-profile-list.service';
 import { UserProfile } from '../user.model';
-
+import * as firebase from "firebase";
 
 @Component({
   selector: 'app-user-profile',
@@ -15,6 +15,8 @@ import { UserProfile } from '../user.model';
 export class UserProfileComponent implements OnInit {
   profileId: string;
   profileToDisplay;
+  private user;
+  toggle: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,5 +36,18 @@ export class UserProfileComponent implements OnInit {
         }
       }
     });
+  }
+
+  ngDoCheck() {
+    this.user = firebase.auth().currentUser;
+    if(this.user.uid === this.profileId) {
+      this.toggle = true;
+    } else {
+      this.toggle = false;
+    }
+  }
+
+  updateSubmit(profile){
+    this.userProfileService.updateProfile(profile);
   }
 }
