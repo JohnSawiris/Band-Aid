@@ -28,17 +28,9 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
-  
-  goToUserProfile(userId) {
-    this.router.navigate(['user-profile', userId]);
-  }
 
   login() {
     this.authService.login();
   }
 
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
 }
