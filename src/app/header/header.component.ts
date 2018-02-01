@@ -38,8 +38,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  login() {
-    this.authService.login();
+  logout() {
+    this.userFirebaseProfile = null;
   }
-
 }

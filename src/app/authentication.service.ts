@@ -30,8 +30,10 @@ export class AuthenticationService {
     })
   }
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  login(email: string, password: string) {
+    this.afAuth.auth.signInWithEmailAndPassword(email, password).catch(function(error) {
+      alert(error.message);
+    });
   }
 
   logout() {
@@ -41,5 +43,4 @@ export class AuthenticationService {
   isLoggedIn() {
     return (this.user ? true : false);
   }
-
 }

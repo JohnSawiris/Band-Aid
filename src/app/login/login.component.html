@@ -1,4 +1,7 @@
-<!-- <div class="login-wrapper">
-  <label for="username-login">Username</label>
-  <input id="username-login" type="text" #userNameInput>
-</div> -->
+<div class="login-wrapper">
+  <label for="user-email">Email</label>
+  <input id="user-email" type="email" #userEmailInput>
+  <label for="user-password">Password</label>
+  <input id="user-password" type="password" #userPasswordInput>
+  <button (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login!</button>
+</div>

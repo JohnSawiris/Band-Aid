@@ -17,7 +17,6 @@ export class DiscogsService {
   ) { }
 
   getArtistsByName(name: string) {
-    console.log(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
     return this.http.get(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
