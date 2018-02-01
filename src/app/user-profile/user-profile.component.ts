@@ -14,10 +14,12 @@ import { UserProfileListService } from '../user-profile-list.service';
 })
 
 export class UserProfileComponent implements OnInit {
-  profileId: string;
-  profileToDisplay;
   private user;
-  toggle: boolean = false;
+  public albumsInCollection;
+  public albumsInWishlist;
+  public profileId: string;
+  public profileToDisplay;
+  public toggle: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,16 +38,22 @@ export class UserProfileComponent implements OnInit {
           this.profileToDisplay = profile;
         }
       }
+      this.userProfileService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+        this.albumsInCollection = albums;
+      });
     });
   }
 
   ngDoCheck() {
     this.user = firebase.auth().currentUser;
-    if(this.user.uid === this.profileId) {
-      this.toggle = true;
+    if(this.user) {
+      if(this.user.uid === this.profileId) {
+        this.toggle = true;
+      }
     } else {
-      this.toggle = false;
+        this.toggle = false;
     }
+
   }
 
   updateSubmit(profile){
