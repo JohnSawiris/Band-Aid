@@ -1,15 +1,15 @@
-// .tour-albums {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: row-reverse;
-// }
-//
-// .album-list {
-//   width: 800px;
-// }
+.artist-profile {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #BA5624;
+  p {
+    color: #617073;
+  }
+}
 .album-list {
   display: flex;
   flex-wrap: wrap;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #617073;
   .image-wrapper{
     width: 100%;
   	padding-bottom: 100%; /* 16:9 */
