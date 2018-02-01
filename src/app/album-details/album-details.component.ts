@@ -21,6 +21,8 @@ export class AlbumDetailsComponent implements OnInit {
   private userFirebaseProfile;
   albumId: string;
   albumToDisplay: Album;
+  toggle: boolean = false;
+  artistId: string;
 
   constructor(
     public authService: AuthenticationService,
@@ -34,8 +36,10 @@ export class AlbumDetailsComponent implements OnInit {
     this.authService.user.subscribe(user => {
       if (!user) {
         this.currentUser = null;
+        this.toggle = false;
       } else if (user) {
         this.currentUser = user;
+        this.toggle = true;
       }
 
       this.userProfileListService.getProfiles().subscribe(profilesReturned => {
@@ -51,6 +55,7 @@ export class AlbumDetailsComponent implements OnInit {
 
     this.discogsService.getAlbumByMasterId(this.albumId).subscribe(albumReturned => {
       const albumDetails = albumReturned.json();
+      this.artistId = albumDetails.artists[0].id;
       this.albumToDisplay = new Album(albumDetails.artists[0].name, albumDetails.title, albumDetails.id, albumDetails.images[0].uri);
     });
   }
@@ -62,4 +67,8 @@ export class AlbumDetailsComponent implements OnInit {
   addCurrentAlbumToWishlist(album: Album) {
     this.userProfileListService.addAlbumToWishlist(this.userFirebaseProfile.$key, album);
   };
+
+  artistDetailPage(){
+    this.router.navigate(['artist-album-list', this.artistId])
+  }
 }
