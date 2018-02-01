@@ -6,14 +6,22 @@
   ul {
     display: flex;
     list-style: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #617073;
     li {
       &:nth-child(1n+2) {
         margin-left: 20px;
       }
+      a {
+        color: #BA5624;
+      }
     }
   }
 }
-
+.logo {
+  font-family: 'Megrim', cursive;
+  color: #617073;
+}
 .signup div {
   display: flex;
   flex-direction: column;
