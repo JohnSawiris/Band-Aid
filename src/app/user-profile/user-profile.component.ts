@@ -75,4 +75,8 @@ export class UserProfileComponent implements OnInit {
     this.userProfileListService.removeAlbumFromWishlist(userKey, albumKey);
   }
 
+  moveToCollection(userKey, album) {
+    this.userProfileListService.moveAlbumFromWishlistToCollection(userKey, album);
+  }
+
 }

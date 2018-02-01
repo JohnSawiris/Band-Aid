@@ -15,7 +15,7 @@
         <div class="card">
           <img class="card-img-top" src="{{albumInCollection.image}}">
 
-          <div class="card-body">
+          <div class="card-body" *ngIf="toggle">
             <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">Delete</button>
           </div>
         </div>
@@ -26,11 +26,14 @@
       <div class="col-md-2" *ngFor="let albumInWishlist of albumsInWishlist">
         <div class="card">
           <img class="card-img-top" src="{{albumInWishlist.image}}">
-          <div class="card-body">
-            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInWishlist(
+          <div class="card-body" *ngIf="toggle">
+            <button class="btn btn-outline-secondary" (click)="deleteAlbumInWishlist(
             profileToDisplay.$key,
             albumInWishlist.$key
             )">Delete</button>
+            <button class="btn btn-outline-primary" (click)="moveToCollection(
+            profileToDisplay.$key,
+            albumInWishlist)">Move To Collection</button>
           </div>
         </div>
       </div>
