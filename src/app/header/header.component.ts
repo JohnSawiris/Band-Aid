@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication.service';
+import { UserProfileListService } from '../user-profile-list.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,12 @@ import { AuthenticationService } from '../authentication.service';
 
 export class HeaderComponent implements OnInit {
   private currentUser;
+  private userFirebaseProfile;
   private isLoggedIn;
 
   constructor(
     public authService: AuthenticationService,
+    public userProfileListService: UserProfileListService,
     private router: Router
   ) { }
 
@@ -26,19 +29,17 @@ export class HeaderComponent implements OnInit {
       } else if (user) {
         this.currentUser = user;
       }
+
+      this.userProfileListService.getProfiles().subscribe(profilesReturned => {
+        this.userFirebaseProfile = profilesReturned.find((profile) => {
+          return profile.id === user.uid;
+        });
+      });
     });
-  }
-  
-  goToUserProfile(userId) {
-    this.router.navigate(['user-profile', userId]);
   }
 
   login() {
     this.authService.login();
   }
 
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['']);
-  }
 }

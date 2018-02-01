@@ -7,7 +7,6 @@ import { UserProfile } from './user.model';
 
 @Injectable()
 export class UserProfileListService {
-
   profiles: FirebaseListObservable<any[]>;
   private profileKey: string;
 
@@ -16,7 +15,7 @@ export class UserProfileListService {
   }
 
   getProfiles(){
-    return this.profiles
+    return this.profiles;
   }
 
   getProfilesById(userKey: string) {
@@ -38,18 +37,18 @@ export class UserProfileListService {
     let wishlistedAlbums;
 
     collection.subscribe(albumsInCollection => {
-      collectedAlbums = albumsInCollection
+      collectedAlbums = albumsInCollection;
     });
 
     wishlist.subscribe(albumsInWishlist => {
-      wishlistedAlbums = albumsInWishlist
+      wishlistedAlbums = albumsInWishlist;
     });
 
     if(!collectedAlbums.length && !wishlistedAlbums.length) {
       collection.push(albumToAdd);
     } else {
       const albumIsCollected = collectedAlbums.find((thisAlbumInCollection) => thisAlbumInCollection.id === albumToAdd.id);
-      const albumIsWishlisted = wishlistedAlbums.find((thisAlbumInWishlist) => thisAlbumInWishlist.id === albumToAdd.id)
+      const albumIsWishlisted = wishlistedAlbums.find((thisAlbumInWishlist) => thisAlbumInWishlist.id === albumToAdd.id);
       if(albumIsCollected) {
         alert("This album is already in your collection!");
       } else if(albumIsWishlisted) {
@@ -57,7 +56,7 @@ export class UserProfileListService {
           this.database.object(`userProfiles/${userKey}/wishlist/${albumIsWishlisted.$key}`).remove();
           collection.push(albumToAdd);
         };
-      } else if (!albumIsCollected && !albumIsWishlisted){
+      } else if (!albumIsCollected && !albumIsWishlisted) {
         collection.push(albumToAdd);
       } else {
         alert("There was an error processing your request. Please contact the system administrator.");
@@ -72,18 +71,18 @@ export class UserProfileListService {
     let wishlistedAlbums;
 
     collection.subscribe(albumsInCollection => {
-      collectedAlbums = albumsInCollection
+      collectedAlbums = albumsInCollection;
     });
 
     wishlist.subscribe(albumsInWishlist => {
-      wishlistedAlbums = albumsInWishlist
+      wishlistedAlbums = albumsInWishlist;
     });
 
     if(!collectedAlbums.length && !wishlistedAlbums.length) {
       wishlist.push(albumToAdd);
     } else {
       const albumIsCollected = collectedAlbums.find((thisAlbumInCollection) => thisAlbumInCollection.id === albumToAdd.id);
-      const albumIsWishlisted = wishlistedAlbums.find((thisAlbumInWishlist) => thisAlbumInWishlist.id === albumToAdd.id)
+      const albumIsWishlisted = wishlistedAlbums.find((thisAlbumInWishlist) => thisAlbumInWishlist.id === albumToAdd.id);
       if(albumIsWishlisted) {
         alert("This album is already in your wishlist.");
       } else if(albumIsCollected) {
@@ -100,7 +99,7 @@ export class UserProfileListService {
     this.profiles.push(newUser);
   }
 
-  updateProfile(profile){
+  updateProfile(profile) {
     var profileEntry = this.getProfilesById(profile.$key);
     profileEntry.update({name: profile.name});
   }

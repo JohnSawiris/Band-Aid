@@ -1,9 +1,10 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
-import { UserProfileListService } from '../user-profile-list.service';
-import { UserProfile } from '../user.model';
 import * as firebase from "firebase";
+
+import { UserProfile } from '../user.model';
+import { UserProfileListService } from '../user-profile-list.service';
 
 @Component({
   selector: 'app-user-profile',

@@ -7,7 +7,7 @@
     <li><a routerLink="profiles">Profiles</a></li>
     <li><a routerLink="search">Search</a></li>
     <li *ngIf="!currentUser"><a routerLink="login">Login</a> or <a routerLink="signup">Sign up!</a></li>
-    <li *ngIf="currentUser"><a (click)="goToUserProfile(currentUser.uid)">{{currentUser.displayName}}</a></li>
-    <li *ngIf="currentUser"><a (click)="logout()">Logout</a></li>
+    <li *ngIf="currentUser"><a routerLink="user-profile/{{currentUser.uid}}">{{userFirebaseProfile.name}}</a></li>
+    <li *ngIf="currentUser"><a routerLink="logout">Logout</a></li>
   </ul>
 </div>
