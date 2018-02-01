@@ -13,10 +13,10 @@
     <div class="row">
       <div class="col-md-2" *ngFor="let albumInCollection of albumsInCollection">
         <div class="card">
-          <img class="card-img-top" src="{{albumInCollection.image}}">
+          <img class="card-img-top" src="{{albumInCollection.image}}" (click)="goToAlbumDetails(albumInCollection)">
 
           <div class="card-body" *ngIf="toggle">
-            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">Delete</button>
+            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">-</button>
           </div>
         </div>
       </div>
@@ -25,15 +25,15 @@
     <div class="row">
       <div class="col-md-2" *ngFor="let albumInWishlist of albumsInWishlist">
         <div class="card">
-          <img class="card-img-top" src="{{albumInWishlist.image}}">
+          <img class="card-img-top" src="{{albumInWishlist.image}}" (click)="goToAlbumDetails(albumInWishlist)">
           <div class="card-body" *ngIf="toggle">
+            <button class="btn btn-outline-primary" (click)="moveToCollection(
+            profileToDisplay.$key,
+            albumInWishlist)">+</button>
             <button class="btn btn-outline-secondary" (click)="deleteAlbumInWishlist(
             profileToDisplay.$key,
             albumInWishlist.$key
-            )">Delete</button>
-            <button class="btn btn-outline-primary" (click)="moveToCollection(
-            profileToDisplay.$key,
-            albumInWishlist)">Move To Collection</button>
+            )">-</button>
           </div>
         </div>
       </div>

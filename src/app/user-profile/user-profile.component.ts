@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as firebase from "firebase";
 
 import { AuthenticationService } from '../authentication.service';
@@ -29,6 +29,7 @@ export class UserProfileComponent implements OnInit {
     public authService: AuthenticationService,
     private route: ActivatedRoute,
     private location: Location,
+    private router: Router,
     private userProfileListService: UserProfileListService
 
   ) { }
@@ -78,6 +79,10 @@ export class UserProfileComponent implements OnInit {
 
   moveToCollection(userKey, album) {
     this.userProfileListService.moveAlbumFromWishlistToCollection(userKey, album);
+  }
+
+  goToAlbumDetails(album) {
+    this.router.navigate(['album-details', album.id]);
   }
 
 }
