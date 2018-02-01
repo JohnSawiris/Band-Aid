@@ -18,10 +18,12 @@ import { UserProfileListService } from '../user-profile-list.service';
 })
 
 export class UserProfileComponent implements OnInit {
-  profileId: string;
-  profileToDisplay;
   private user;
-  toggle: boolean = false;
+  public albumsInCollection;
+  public albumsInWishlist;
+  public profileId: string;
+  public profileToDisplay;
+  public toggle: boolean = false;
 
   constructor(
     public authService: AuthenticationService,
@@ -41,6 +43,9 @@ export class UserProfileComponent implements OnInit {
           this.profileToDisplay = profile;
         }
       }
+      this.userProfileService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+        this.albumsInCollection = albums;
+      });
     });
   }
 
@@ -49,9 +54,9 @@ export class UserProfileComponent implements OnInit {
     if(this.user) {
       if(this.user.uid === this.profileId) {
         this.toggle = true;
-      } else {
-        this.toggle = false;
       }
+    } else {
+        this.toggle = false;
     }
   }
 
