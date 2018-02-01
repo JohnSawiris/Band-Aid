@@ -18,10 +18,12 @@ BandAid is a record collection management application. Users will be able to sea
   5. Create a new file in the "src/" directory of the project with the name "api-keys.ts".
   6. Finally add the following export statement to the file with your API key in the quotes. The key is already linked to an import statement in the application files so no other steps are necessary.
 
-  `export const masterDiscogsAuth = {
+  ```
+  export const masterDiscogsAuth = {
     key: "{{yourConsumerKeyHere}}",
     secret: "{{yourConsumerSecretHere}}"
-  } `
+  }
+  ```
 
 ## Server Setup
 
@@ -36,13 +38,15 @@ BandAid is a record collection management application. Users will be able to sea
   9. Copy the apiKey, authDomain, databaseURL, projectId, and storageBucket key/value pairs.
   10. Finally add the following export statement beneath the api-keys export in the "api-keys.ts" file with your Firebase configuration properties where they belong. The configuration is already linked to an import statement in the application files so no other steps are necessary.
 
-  `export const masterFirebaseConfig = {
+  ```
+  export const masterFirebaseConfig = {
     apiKey: "{{yourApiKeyHere}}",
     authDomain: "{{yourAuthDomainHere}}",
     databaseURL: "{{yourDatabaseURLHere}}",
     projectId: "{{yourProjectIdHere}}",
     storageBucket: "{{yourStorageBucketHere}}"
-  }`
+  }
+  ```
 
 ## Technologies Used:
 * Angular 2
