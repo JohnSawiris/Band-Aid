@@ -1,0 +1,25 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #BA5624;
+  h2 {
+    margin-bottom: 20px;
+  }
+  input {
+    margin-bottom: 20px;
+    border: 3px solid #617073;
+    background: none;
+    width: 200px;
+  }
+  button {
+    background: none;
+    border: 3px solid #617073;
+    color: #BA5624;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}
