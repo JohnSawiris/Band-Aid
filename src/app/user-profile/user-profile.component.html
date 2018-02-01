@@ -5,7 +5,7 @@
       <div class="form-group">
         <input placeholder="name" [(ngModel)]="profileToDisplay.name">
       </div>
-      <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay);">Update</button>
+      <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay);">Edit Profile Name</button>
     </div>
   </div>
   <div class="container">
@@ -14,16 +14,26 @@
       <div class="col-md-2" *ngFor="let albumInCollection of albumsInCollection">
         <div class="card">
           <img class="card-img-top" src="{{albumInCollection.image}}">
+
+          <div class="card-body">
+            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">Delete</button>
+          </div>
         </div>
       </div>
     </div>
-
-
     <h1>Wishlist</h1>
-    <div class="row" *ngFor="let albumInWishlist of albumsInWishlist">
-      <div class="col-md-2">
-        {{albumInWishlist.artist}}
+    <div class="row">
+      <div class="col-md-2" *ngFor="let albumInWishlist of albumsInWishlist">
+        <div class="card">
+          <img class="card-img-top" src="{{albumInWishlist.image}}">
+          <div class="card-body">
+            <button class="btn btn-outline-secondary btn-block" (click)="deleteAlbumInWishlist(
+            profileToDisplay.$key,
+            albumInWishlist.$key
+            )">Delete</button>
+          </div>
+        </div>
       </div>
     </div>
-
+  </div>
 </div>

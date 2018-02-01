@@ -43,8 +43,11 @@ export class UserProfileComponent implements OnInit {
           this.profileToDisplay = profile;
         }
       }
-      this.userProfileService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+      this.userProfileListService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
         this.albumsInCollection = albums;
+      });
+      this.userProfileListService.getWishlistByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+        this.albumsInWishlist = albums;
       });
     });
   }
@@ -56,12 +59,20 @@ export class UserProfileComponent implements OnInit {
         this.toggle = true;
       }
     } else {
-        this.toggle = false;
+      this.toggle = false;
     }
   }
 
   updateSubmit(profile){
     this.userProfileListService.updateProfile(profile);
+  }
+
+  deleteAlbumInCollection(userKey, albumKey) {
+    this.userProfileListService.removeAlbumFromCollection(userKey, albumKey);
+  }
+
+  deleteAlbumInWishlist(userKey, albumKey) {
+    this.userProfileListService.removeAlbumFromWishlist(userKey, albumKey);
   }
 
 }
