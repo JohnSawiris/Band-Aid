@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as firebase from "firebase";
 
 import { AuthenticationService } from '../authentication.service';
@@ -29,6 +29,7 @@ export class UserProfileComponent implements OnInit {
     public authService: AuthenticationService,
     private route: ActivatedRoute,
     private location: Location,
+    private router: Router,
     private userProfileListService: UserProfileListService
 
   ) { }
@@ -36,18 +37,18 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.profileId = urlParameters['id'];
-    });
-    this.userProfileListService.getProfiles().subscribe(profiles => {
-      for(let profile of profiles) {
-        if(profile.id === this.profileId) {
-          this.profileToDisplay = profile;
+      this.userProfileListService.getProfiles().subscribe(profiles => {
+        for(let profile of profiles) {
+          if(profile.id === this.profileId) {
+            this.profileToDisplay = profile;
+          }
         }
-      }
-      this.userProfileListService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
-        this.albumsInCollection = albums;
-      });
-      this.userProfileListService.getWishlistByUserKey(this.profileToDisplay.$key).subscribe(albums => {
-        this.albumsInWishlist = albums;
+        this.userProfileListService.getCollectionByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+          this.albumsInCollection = albums;
+        });
+        this.userProfileListService.getWishlistByUserKey(this.profileToDisplay.$key).subscribe(albums => {
+          this.albumsInWishlist = albums;
+        });
       });
     });
   }
@@ -73,6 +74,14 @@ export class UserProfileComponent implements OnInit {
 
   deleteAlbumInWishlist(userKey, albumKey) {
     this.userProfileListService.removeAlbumFromWishlist(userKey, albumKey);
+  }
+
+  moveToCollection(userKey, album) {
+    this.userProfileListService.moveAlbumFromWishlistToCollection(userKey, album);
+  }
+
+  goToAlbumDetails(album) {
+    this.router.navigate(['album-details', album.id]);
   }
 
 }

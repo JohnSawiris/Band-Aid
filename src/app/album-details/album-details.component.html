@@ -1,7 +1,10 @@
 <div *ngIf="albumToDisplay">
-  <h3>{{albumToDisplay.artist}}</h3>
+  <h1 (click)="artistDetailPage()">{{albumToDisplay.artist}}</h1>
+  <hr>
   <h4>{{albumToDisplay.title}}</h4>
-  <button (click)='addCurrentAlbumToCollection(albumToDisplay)'>Add to collection</button>
-  <button (click)='addCurrentAlbumToWishlist(albumToDisplay)'>Add to wishlist</button>
   <img src="{{albumToDisplay.image}}" alt="">
+  <div class="mt-4" *ngIf='toggle'>
+    <button class="btn btn-outline-info" (click)='addCurrentAlbumToCollection(albumToDisplay)'>Add to collection</button>
+    <button class="btn btn-outline-success" (click)='addCurrentAlbumToWishlist(albumToDisplay)'>Add to wishlist</button>
+  </div>
 </div>

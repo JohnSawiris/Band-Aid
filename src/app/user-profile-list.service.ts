@@ -119,6 +119,6 @@ export class UserProfileListService {
 
   moveAlbumFromWishlistToCollection(userKey, album) {
     this.database.list(`userProfiles/${userKey}/wishlist/${album.$key}`).remove();
-    this.database.list(`userProfile/${userKey}/collection`).push(album);
+    this.database.list(`userProfiles/${userKey}/collection`).push(album);
   }
 }
