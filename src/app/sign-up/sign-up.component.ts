@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication.service';
 import { UserProfile } from '../user.model';
@@ -15,6 +16,7 @@ export class SignUpComponent implements OnInit {
   displayError;
   constructor(
     public authService: AuthenticationService,
+    private router: Router,
     public userProfileService: UserProfileListService
   ) { }
 

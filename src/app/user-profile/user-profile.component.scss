@@ -19,3 +19,41 @@
     margin-bottom: 60PX;
   }
 }
+
+.profile-name {
+  font-size: 7em;
+  color: #6f6f6f;
+  margin-bottom: 40px;
+}
+
+.edit-form {
+  display: flex;
+  align-items: baseline;
+  margin-right: 18px;
+}
+
+.edit-input-field {
+  margin-right: 30px;
+}
+
+.collection {
+  margin-bottom: 40px;
+  p {
+    color: red;
+  }
+}
+
+.wishlist {
+  p {
+    color: blue;
+  }
+  p:nth-child(2) {
+    color: red;
+  }
+}
+
+.edit-div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: flex-end;
+}
