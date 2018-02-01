@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { ArtistAlbumListComponent } from './artist-album-list/artist-album-list.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { ResultsListComponent } from './results-list/results-list.component';
@@ -42,7 +41,6 @@ export const firebaseConfig = {
     AppComponent,
     ArtistAlbumListComponent,
     ArtistListComponent,
-    EditProfileComponent,
     HeaderComponent,
     LoginComponent,
     ResultsListComponent,
