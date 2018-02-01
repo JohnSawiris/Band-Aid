@@ -25,8 +25,7 @@ export class ArtistListComponent implements OnInit {
     });
 
     this.discogsService.getArtistsByName(this.artistName).subscribe(artists => {
-      this.artistsToDisplay = artists.json().results;
-      console.log(this.artistsToDisplay);
+      this.artistsToDisplay = artists.json().results.filter(artist => artist.thumb);
    });
   }
 

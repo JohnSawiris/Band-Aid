@@ -1,3 +1,25 @@
+.profile-container {
+  font-family: 'Roboto Condensed', sans-serif;
+  h1 {
+    color: #BA5624;
+  }
+  p {
+    color: #617073;
+  }
+  input {
+    border: 3px solid #617073;
+    background: none;
+    color: #617073;
+  }
+  button {
+    background: none;
+    border: 3px solid #617073;
+    color: #BA5624;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-bottom: 60PX;
+  }
+}
+
 .profile-name {
   font-size: 7em;
   color: #6f6f6f;
@@ -35,10 +57,3 @@
   flex-direction: row-reverse;
   align-content: flex-end;
 }
-
-// .card-img-top {
-//   transition: box-shadow .4s ease-in-out;
-//   &:hover {
-//     box-shadow: 0 0 10px #000;
-//   }
-// }
