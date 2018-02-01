@@ -1,3 +1,7 @@
-<h3>{{albumDetailsToDisplay.artists[0].name}}</h3>
-<h4>{{albumDetailsToDisplay.title}}</h4>
-<img src="{{albumDetailsToDisplay.images[0].uri}}" alt="">
+<div *ngIf="albumToDisplay">
+  <h3>{{albumToDisplay.artist}}</h3>
+  <h4>{{albumToDisplay.title}}</h4>
+  <button (click)='addCurrentAlbumToCollection(albumToDisplay)'>Add to collection</button>
+  <button (click)='addCurrentAlbumToWishlist(albumToDisplay)'>Add to wishlist</button>
+  <img src="{{albumToDisplay.image}}" alt="">
+</div>

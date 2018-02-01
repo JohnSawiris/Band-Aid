@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+  
+  goToUserProfile(userId) {
+    this.router.navigate(['user-profile', userId]);
+  }
 
   login() {
     this.authService.login();
@@ -36,10 +40,5 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['']);
-  }
-
-  goToUserProfile(userId) {
-    console.log(userId);
-    this.router.navigate(['user-profile', userId]);
   }
 }
