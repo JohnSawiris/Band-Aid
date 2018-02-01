@@ -1,7 +1,8 @@
 export class Album {
   constructor (
+    public artist: string,
     public title: string,
     public id: string,
-    public thumb: string
+    public image: string
   ) { }
 }

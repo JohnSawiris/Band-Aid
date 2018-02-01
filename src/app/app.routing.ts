@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AlbumDetailsComponent } from './album-details/album-details.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { SearchComponent } from './search/search.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { TourComponent } from './tour/tour.component';
@@ -33,6 +34,10 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'profiles',

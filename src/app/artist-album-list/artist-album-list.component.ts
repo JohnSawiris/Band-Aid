@@ -29,7 +29,6 @@ export class ArtistAlbumListComponent implements OnInit {
       this.artistDetails = artist.json();
       this.discogsService.getReleasesByArtistId(this.artistDetails.name).subscribe(artistAlbums => {
         this.albumsToDisplay = artistAlbums.json().results;
-        console.log(this.albumsToDisplay);
       });
     });
   }
