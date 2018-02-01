@@ -109,11 +109,11 @@ export class UserProfileListService {
     profileEntry.update({name: profile.name});
   }
 
-  removeAlbumFromCollection(albumKey) {
+  removeAlbumFromCollection(userKey, albumKey) {
     this.database.list(`userProfiles/${userKey}/collection/${albumKey}`).remove();
   }
 
-  removeAlbumFromWishlist(albumKey) {
+  removeAlbumFromWishlist(userKey, albumKey) {
     this.database.list(`userProfiles/${userKey}/wishlist/${albumKey}`).remove();
   }
 }
