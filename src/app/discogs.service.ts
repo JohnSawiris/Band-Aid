@@ -17,7 +17,6 @@ export class DiscogsService {
   ) { }
 
   getArtistsByName(name: string) {
-    console.log(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
     return this.http.get(`https://api.discogs.com/database/search?q=${name}&type=artist&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
@@ -26,7 +25,7 @@ export class DiscogsService {
   }
 
   getReleasesByArtistId(artistName: string) {
-    return this.http.get(`https://api.discogs.com/database/search?artist=${artistName}&type=master&strict=true&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
+    return this.http.get(`https://api.discogs.com/database/search?artist=${artistName}&type=master&strict=true&per_page=100&key=${discogsAuth.key}&secret=${discogsAuth.secret}`);
   }
 
   getAlbumByMasterId(albumId: string) {

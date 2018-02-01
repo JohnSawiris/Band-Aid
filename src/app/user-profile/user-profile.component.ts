@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import * as firebase from "firebase";
 
+import { AuthenticationService } from '../authentication.service';
 import { UserProfile } from '../user.model';
 import { UserProfileListService } from '../user-profile-list.service';
 
@@ -10,7 +11,10 @@ import { UserProfileListService } from '../user-profile-list.service';
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss'],
-  providers: [UserProfileListService]
+  providers: [
+    AuthenticationService,
+    UserProfileListService
+  ]
 })
 
 export class UserProfileComponent implements OnInit {
@@ -22,9 +26,10 @@ export class UserProfileComponent implements OnInit {
   public toggle: boolean = false;
 
   constructor(
+    public authService: AuthenticationService,
     private route: ActivatedRoute,
     private location: Location,
-    private userProfileService: UserProfileListService
+    private userProfileListService: UserProfileListService
 
   ) { }
 
@@ -32,7 +37,7 @@ export class UserProfileComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.profileId = urlParameters['id'];
     });
-    this.userProfileService.getProfiles().subscribe(profiles => {
+    this.userProfileListService.getProfiles().subscribe(profiles => {
       for(let profile of profiles) {
         if(profile.id === this.profileId) {
           this.profileToDisplay = profile;
@@ -53,10 +58,10 @@ export class UserProfileComponent implements OnInit {
     } else {
         this.toggle = false;
     }
-
   }
 
   updateSubmit(profile){
-    this.userProfileService.updateProfile(profile);
+    this.userProfileListService.updateProfile(profile);
   }
+
 }
