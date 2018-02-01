@@ -37,7 +37,6 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       this.profileId = urlParameters['id'];
-
       this.userProfileListService.getProfiles().subscribe(profiles => {
         for(let profile of profiles) {
           if(profile.id === this.profileId) {

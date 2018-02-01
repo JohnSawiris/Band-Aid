@@ -1,7 +1,7 @@
-<div class="login-wrapper">
+<form (keyup.enter)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)" class="login-wrapper">
   <label for="user-email">Email</label>
   <input id="user-email" type="email" #userEmailInput>
   <label for="user-password">Password</label>
   <input id="user-password" type="password" #userPasswordInput>
-  <button (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login!</button>
-</div>
+  <button type="button" (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login!</button>
+</form>
