@@ -1,7 +1,8 @@
 <div class="login-wrapper">
-  <label for="user-email">Email</label>
+  <h2>Login</h2>
+  Email:
   <input id="user-email" type="email" #userEmailInput>
-  <label for="user-password">Password</label>
+  Password:
   <input id="user-password" type="password" #userPasswordInput>
-  <button (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login!</button>
+  <button (click)="loginWithEmailAndPassword(userEmailInput.value, userPasswordInput.value)">Login</button>
 </div>

@@ -1,15 +1,29 @@
 .search-field {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 200px;
-
-  input {
-    width: 300px;
-    border: 1px solid black;
+  align-items: center;
+  margin-top: 100px;
+  font-family: 'Roboto Condensed', sans-serif;
+  h2 {
+    color: #BA5624;
+    margin-bottom: 20px;
   }
-  button {
-    margin-left: 10px;
-    background: none;
-    border: 1px solid black;
+  .search-input {
+
+    display: flex;
+    justify-content: center;
+    input {
+      width: 300px;
+      border: 3px solid #617073;
+      background: none;
+    }
+    button {
+      margin-left: 10px;
+      background: none;
+      border: 3px solid #617073;
+      color: #BA5624;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
   }
 }
