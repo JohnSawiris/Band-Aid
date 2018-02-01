@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 })
 export class WelcomeComponent implements OnInit {
   private user;
-
+  public hide: boolean;
   constructor(
     private router: Router
   ) {
@@ -20,6 +20,11 @@ export class WelcomeComponent implements OnInit {
 
   ngDoCheck() {
     this.user = firebase.auth().currentUser;
+    if(this.user) {
+      this.hide = false;
+    } else {
+      this.hide = true;
+    }
   }
 
 }
