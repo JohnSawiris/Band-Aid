@@ -14,13 +14,20 @@
       }
       a {
         color: #BA5624;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
 }
-.logo {
+.logo a {
   font-family: 'Megrim', cursive;
   color: #617073;
+  font-size: 2em;
+  &:hover {
+    text-decoration: none;
+  }
 }
 .signup div {
   display: flex;
