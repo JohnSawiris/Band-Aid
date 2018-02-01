@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Component({
@@ -9,7 +10,9 @@ import * as firebase from 'firebase';
 export class WelcomeComponent implements OnInit {
   private user;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
