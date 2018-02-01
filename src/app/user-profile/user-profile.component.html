@@ -2,10 +2,10 @@
   <h1>{{profileToDisplay.name}}</h1>
   <div *ngIf="toggle">
     <div class="edit-form">
-      <div class="form-group">
+      <div (keyup.enter)='updateSubmit(profileToDisplay)' class="form-group">
         <input placeholder="name" [(ngModel)]="profileToDisplay.name">
       </div>
-      <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay);">Edit Profile Name</button>
+      <button class="btn btn-primary"  (click)="updateSubmit(profileToDisplay)">Edit Profile Name</button>
     </div>
   </div>
   <div class="container">

@@ -1,12 +1,18 @@
 <div class="signup-container">
   <div class="signup-form">
-    <form>
+    <form (keyup.enter)="signup(
+      email.value,
+      password.value,
+      name.value);
+      email.value = '';
+      password.value = '';
+      name.value = '';">
       <h2>Sign up</h2>
       Email: <input type="text" #email>
       Password: <input type="password" #password>
       Name: <input type="text" #name>
     </form>
-    <button (click)="signup(
+    <button type="button" (click)="signup(
       email.value,
       password.value,
       name.value);

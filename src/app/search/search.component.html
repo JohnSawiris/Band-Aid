@@ -1,4 +1,4 @@
-<div class="search-field">
+<div (keyup.enter)='getSearchList(searchQuery.value)' class="search-field">
   <input #searchQuery>
   <button (click)='getSearchList(searchQuery.value)'>Search</button>
 </div>
