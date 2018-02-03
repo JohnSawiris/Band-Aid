@@ -16,7 +16,6 @@
         <div class="col-md-2" *ngFor="let albumInCollection of albumsInCollection">
           <div class="card">
             <img class="card-img-top" src="{{albumInCollection.image}}" (click)="goToAlbumDetails(albumInCollection)">
-
             <div class="card-body" *ngIf="toggle">
               <button class="btn btn-outline-danger btn-block" (click)="deleteAlbumInCollection(profileToDisplay.$key, albumInCollection.$key)">-</button>
             </div>
